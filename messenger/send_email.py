@@ -18,6 +18,7 @@ class NotificationService(object):
         configure it following the steps on this link:
         https://devanswers.co/create-application-specific-password-gmail/
     """
+
     def __init__(self, access_email, password):
         self.access_email = access_email
         self.password = password
@@ -33,7 +34,11 @@ class NotificationService(object):
         """
         if attachment:
             if attachment_name and subtype:
-                mime.attach(MIMEApplication(attachment, Name=attachment_name, _subtype=subtype))
+                mime.attach(
+                    MIMEApplication(
+                        attachment, Name=attachment_name, _subtype=subtype
+                    )
+                )
             else:
                 pass
 
@@ -64,12 +69,13 @@ class NotificationService(object):
         subject,
         attachment=None,
         attachment_name=None,
-        subtype=None
+        subtype=None,
     ):
         """
         Principal method from the class. It prepares everything and then
         sends the e-mail
-        :param template_path : path where it will look for the template to be rendered
+        :param template_path : path where it will look for the template
+        to be rendered
         :param template_name: name of the template to be rendered
         :param email_from: sender e-mail
         :param email_to: receiver e-mail
@@ -83,7 +89,9 @@ class NotificationService(object):
         message["To"] = email_to
         message["Subject"] = subject
 
-        self._check_attachment(attachment, attachment_name, subtype, mime=message)
+        self._check_attachment(
+            attachment, attachment_name, subtype, mime=message
+        )
 
         content = template_render(template_path, template_name)
 

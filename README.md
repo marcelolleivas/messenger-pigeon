@@ -11,4 +11,3 @@ Please create a pull request if you find anything not working well :)
 
 ## How to use it?
 You can check everything related the usability through [HOWTO.md](docs/HOWTO.md)
-
