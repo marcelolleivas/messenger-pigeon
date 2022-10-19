@@ -14,4 +14,3 @@ Be sure that you have turn on two steps verification and click on "App password"
 ### 4. It will generate a password which you will use as password in your python script
 
 <img src="how_to_images/google_password_generated.jpg" alt="google_corresponding_advice">
-
