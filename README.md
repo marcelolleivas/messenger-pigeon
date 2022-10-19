@@ -1,6 +1,6 @@
 <h1 align="center">Messenger Pigeon</h1>
 <h3 align="center">
-    Python package dedicated to send e-mails.
+    Python package dedicated to send e-mails for free.
 </h3>
 <p align="center">
     <img src="docs/messenger_pigeon.jpg" alt="messenger_pigeon">
