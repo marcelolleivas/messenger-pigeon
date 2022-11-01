@@ -60,10 +60,13 @@ class NotificationService(object):
             server.login(self.access_email, self.password)
             server.sendmail(email_from, email_to, message.as_string())
 
+    @staticmethod
+    def use_default_email_template(title, message):
+        return template_render(title, message)
+
     def send_notification(
         self,
-        template_path,
-        template_name,
+        template,
         email_from,
         email_to,
         subject,
@@ -74,9 +77,7 @@ class NotificationService(object):
         """
         Principal method from the class. It prepares everything and then
         sends the e-mail
-        :param template_path : path where it will look for the template
-        to be rendered
-        :param template_name: name of the template to be rendered
+        :param template: e-mail template that will be sent
         :param email_from: sender e-mail
         :param email_to: receiver e-mail
         :param subject: subject from the e-mail
@@ -93,7 +94,7 @@ class NotificationService(object):
             attachment, attachment_name, subtype, mime=message
         )
 
-        content = template_render(template_path, template_name)
+        content = template
 
         message.attach(MIMEText(content, "html"))
 
