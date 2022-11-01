@@ -1,7 +1,7 @@
 import jinja2
 from jinja2 import select_autoescape
 
-SEARCH_PATH = "../templates"
+SEARCH_PATH = "templates"
 TEMPLATE_FILE = "simple_email.html"
 
 
